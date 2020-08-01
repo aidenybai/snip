@@ -11,7 +11,6 @@ module.exports.run = () => {
 
   router.post('/url', async (req, res) => {
     const captchaResponse = await captcha(req.body.token);
-    console.log(captchaResponse);
     if (!captchaResponse.success || captchaResponse.score < 0.7) return res.boom.forbidden();
 
     const id = req.body.id ? req.body.id : makeid();
@@ -25,7 +24,9 @@ module.exports.run = () => {
         if (req.body.url.length > 2000) res.boom.badRequest('url length must be less than 2000');
         if (req.body.url.length < 3) res.boom.badRequest('url length must be greater than 3');
 
-        const url = normalizeURL(req.body.url, { forceHttps: true });
+        const url = normalizeURL(req.body.url);
+
+        if (url.includes('https://snip.ml')) res.boom.badRequest('base url cannot be snip.ml');
         const existing = await Snip.findOne({ url: Base64.encode(url) });
 
         if (existing) {
