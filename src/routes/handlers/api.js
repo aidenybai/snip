@@ -4,6 +4,7 @@ const normalizeURL = require('normalize-url');
 const Snip = require('../../models/Snip.js');
 const makeid = require('../../utils/makeid.js');
 const captcha = require('../../utils/captcha.js');
+const validateURL = require('../../utils/validateURL.js');
 
 module.exports.path = '/v1';
 module.exports.run = () => {
@@ -20,13 +21,10 @@ module.exports.run = () => {
       res.boom.badRequest('id already taken');
     } else {
       try {
-        if (!req.body.url) res.boom.badRequest('you must provide a url body parameter');
-        if (req.body.url.length > 2000) res.boom.badRequest('url length must be less than 2000');
-        if (req.body.url.length < 3) res.boom.badRequest('url length must be greater than 3');
-
         const url = normalizeURL(req.body.url);
+        const validate = validateURL(url);
 
-        if (url.includes('https://snip.ml')) res.boom.badRequest('base url cannot be snip.ml');
+        if (validate.error) return res.boom.badRequest(validate.message);
         const existing = await Snip.findOne({ url: Base64.encode(url) });
 
         if (existing) {
