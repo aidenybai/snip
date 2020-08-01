@@ -9,7 +9,7 @@ module.exports.run = () => {
   router.get('/*', async (req, res) => {
     const url = await Snip.findOne({ id: req.url.slice(1) });
     if (url) {
-      await Snip.findOneAndUpdate({ id: req.url.slice(1) }, { clicks: url.clicks + 1 });
+      await Snip.findOneAndUpdate({ id: req.url.slice(1) }, { clicks: parseInt(url.clicks) + 1 });
       res.redirect(301, Base64.decode(url.url));
     } else res.boom.notFound();
   });
