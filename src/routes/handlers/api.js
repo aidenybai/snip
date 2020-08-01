@@ -18,7 +18,7 @@ module.exports.run = () => {
     const url = await Snip.findOne({ id });
 
     if (url) {
-      res.boom.badRequest('id already taken');
+      res.boom.badRequest('ID already taken');
     } else {
       try {
         const url = normalizeURL(req.body.url);
