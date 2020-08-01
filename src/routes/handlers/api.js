@@ -22,7 +22,7 @@ module.exports.run = () => {
     } else {
       try {
         const url = normalizeURL(req.body.url);
-        const validate = validateURL(url);
+        const validate = await validateURL(url);
 
         if (validate.error) return res.boom.badRequest(validate.message);
         const existing = await Snip.findOne({ url: Base64.encode(url) });

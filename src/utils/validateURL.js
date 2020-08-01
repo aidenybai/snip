@@ -7,11 +7,15 @@ const validateURL = async (url) => {
   if (url.includes('https://snip.ml'))
     return { error: true, message: 'base url cannot be snip.ml' };
 
-  const response = await fetch(url, {
-    method: 'get',
-  });
+  try {
+    const response = await fetch(url, {
+      method: 'get',
+    });
 
-  return { error: response.ok, message: 'please provide an valid url' };
+    return { error: false };
+  } catch (err) {
+    return { error: true, message: 'please provide an valid url' };
+  }
 };
 
 module.exports = validateURL;
