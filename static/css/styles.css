@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'Circular';
+  src: url(../assets/fonts/CircularStd-Book.ttf);
+}
+
+@font-face {
+  font-family: 'Circular Medium';
+  src: url(../assets/fonts/CircularStd-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Circular Bold';
+  src: url(../assets/fonts/CircularStd-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Circular Black';
+  src: url(../assets/fonts/CircularStd-Black.ttf);
+}
+
+body {
+  background: #030b14;
+  color: #fff;
+  font-family: 'Circular', sans-serif;
+  scroll-behavior: smooth;
+}
+
+button {
+  width: 100%;
+}
+
+::selection {
+  background: #7461fb;
+  color: #fff;
+}
+
+.card {
+  background: #030b14;
+  width: 40%;
+  box-shadow: none !important;
+}
+
+@media only screen and (max-width: 750px) {
+  .card {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.card-title {
+  font-size: 300%;
+}
+
+.card-subtitle {
+  font-size: 120%;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+h3 .fas {
+  color: #7461fb;
+}
+
+h3 .fas:hover {
+  animation: tada;
+  animation-duration: 1s;
+}
+
+a {
+  color: #9facb8 !important;
+}
+
+input {
+  font-family: 'Circular', FontAwesome;
+  font-size: 120% !important;
+  text-align: center;
+  background: #030b14;
+}
+
+input:focus,
+.btn:focus {
+  box-shadow: none !important;
+  border-color: #7461fb !important;
+}
+
+#url {
+  border-radius: 10px !important;
+}
+
+.btn-primary {
+  border-radius: 10px !important;
+  font-size: 110%;
+  background: #7461fb;
+  border-color: #7461fb;
+  padding: 10px;
+}
+
+.btn-primary:hover {
+  background: rgba(102, 82, 255, 0.95);
+  border-color: rgba(102, 82, 255, 0.95);
+}
+
+.btn-primary:active {
+  background: rgba(102, 82, 255, 0.95) !important;
+  border-color: rgba(102, 82, 255, 0.95) !important;
+}
+
+.btn-outline-primary {
+  border-radius: 10px !important;
+  font-size: 110%;
+  color: #7461fb;
+  border-color: #7461fb;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.btn-outline-primary:hover {
+  color: rgba(102, 82, 255, 0.95);
+  border-color: rgba(102, 82, 255, 0.95);
+  background: rgba(102, 82, 255, 0.1);
+}
+
+.btn-outline-primary:active {
+  color: rgba(102, 82, 255, 0.95) !important;
+  border-color: rgba(102, 82, 255, 0.95) !important;
+  background: rgba(102, 82, 255, 0.2) !important;
+}
+
+.btn-danger {
+  font-size: 110%;
+  padding: 10px;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #a6a6a6;
+}
+
+::-webkit-scrollbar-track {
+  background: #4b5a68;
+  border: 1px none #ffffff;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #4b5a68;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #4b5a68;
+}
