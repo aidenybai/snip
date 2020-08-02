@@ -36,14 +36,8 @@ button {
 
 .card {
   background: #030b14;
-  width: 40%;
+  width: 420px;
   box-shadow: none !important;
-}
-
-@media only screen and (max-width: 750px) {
-  .card {
-    width: 75%;
-  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -149,6 +143,10 @@ input:focus,
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+.text-muted {
+  color: #686e75;
 }
 
 ::-webkit-scrollbar {
