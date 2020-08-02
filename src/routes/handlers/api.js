@@ -12,7 +12,8 @@ module.exports.run = () => {
 
   router.post('/url', async (req, res) => {
     const captchaResponse = await captcha(req.body.token);
-    if (!captchaResponse.success || captchaResponse.score < 0.7) return res.boom.forbidden();
+    if (!captchaResponse.success || captchaResponse.score < 0.5)
+      return res.boom.forbidden('Captcha score was less than 0.5 or token failure (refresh page)');
 
     const id = req.body.id ? req.body.id : makeid();
     const url = await Snip.findOne({ id });
