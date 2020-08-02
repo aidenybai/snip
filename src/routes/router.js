@@ -1,7 +1,7 @@
-const root = require('./handlers/root.js');
-const api = require('./handlers/api.js');
+const Root = require('./handlers/root.js');
+const API = require('./handlers/api.js');
 
-const routes = [api, root];
+const routes = [new API(), new Root()];
 
 module.exports = class {
   static registerRoutes(app) {

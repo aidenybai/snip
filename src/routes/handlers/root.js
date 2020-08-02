@@ -2,18 +2,23 @@ const { Router } = require('express');
 const { Base64 } = require('js-base64');
 const Snip = require('../../models/Snip.js');
 
-module.exports.path = '/';
-module.exports.run = () => {
-  const router = Router();
+module.exports = class Root {
+  constructor() {
+    this.path = '/';
+  }
 
-  router.get('/*', async (req, res) => {
-    const url = await Snip.findOne({ id: req.url.slice(1) });
-    res.redirect(301, url ? Base64.decode(url.url) : 'https://snip.ml');
-  });
+  run() {
+    const router = Router();
 
-  router.use('*', (req, res) => {
-    res.boom.notFound();
-  });
+    router.get('/*', async (req, res) => {
+      const url = await Snip.findOne({ id: req.url.slice(1) });
+      res.redirect(301, url ? Base64.decode(url.url) : 'https://snip.ml');
+    });
 
-  return router;
+    router.use('*', (req, res) => {
+      res.boom.notFound();
+    });
+
+    return router;
+  }
 };
