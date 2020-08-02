@@ -26,6 +26,7 @@
     "isomorphic-fetch": "^2.2.1",
     "js-base64": "^3.4.1",
     "mongoose": "^5.8.4",
+    "mongoose-ttl": "^0.0.3",
     "morgan": "^1.10.0",
     "normalize-url": "^5.0.0",
     "short-unique-id": "^3.0.4",
