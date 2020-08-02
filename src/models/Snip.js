@@ -5,7 +5,11 @@ const Snip = new mongoose.Schema(
     id: { type: String, required: true },
     url: { type: String, required: true },
     clicks: { type: String, required: true },
-    createdAt: { type: Date, expires: 432000000, default: Date.now }, // 5d
+    expireAt: {
+      type: Date,
+      default: Date.now,
+      index: { expires: '5d' },
+    },
   },
   { timestamps: true }
 );
