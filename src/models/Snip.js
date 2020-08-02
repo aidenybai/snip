@@ -9,7 +9,7 @@ const Snip = new mongoose.Schema(
       default: new Date(Date.now() + 604800000).toISOString(),
     },
   },
-  { timestamp: true }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model('Snip', Snip);
