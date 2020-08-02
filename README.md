@@ -4,18 +4,18 @@
 
 # Snip
 
-[![Dependencies](https://img.shields.io/aidenybai/snip.svg?style=flat-square)](https://img.shields.io/david/aidenybai/snip.svg?style=flat-square)
-[![Code Size](https://img.shields.io/github/languages/code-size/aidenybai/snipaidenybai/snip?style=flat-square)](https://img.shields.io/github/languages/code-size/aidenybai/snip?style=flat-square)
+[![Dependencies](https://img.shields.io/david/aidenybai/snip.svg?style=flat-square)](https://img.shields.io/david/aidenybai/snip.svg?style=flat-square)
+[![Code Size](https://img.shields.io/github/languages/code-size/aidenybai/snip?style=flat-square)](https://img.shields.io/github/languages/code-size/aidenybai/snip?style=flat-square)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/aidenybai/snip)
 [![License](https://img.shields.io/github/license/aidenybai/snip?style=flat-square)](https://img.shields.io/github/license/aidenybai/snip?style=flat-square)
 
-> The simple, privacy-first link shortener.
+> The simple, no-bullsh\*t link shortener.
 
 ## Goals
 
 - **Speed**: Snip has low performance overhead and is compressed with deflate and gzip.
 - **Security**: Snip is secured with 128-bit SSL and no user data is stored (privacy baby)
-- **Sustainable**: Snip relies on a 5 day TTL model to keep the service going in good health.
+- **Sustainable**: Snip relies on a 7 day TTL model to keep the service going in good health.
 - **Simplicity**: Snip provides a high-level interface that’s easy to use, understand, and debug.
 
 ## Getting Started

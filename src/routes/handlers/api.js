@@ -54,5 +54,9 @@ module.exports.run = () => {
     }
   });
 
+  router.get('/ping', async (req, res) => {
+    res.send('OK');
+  });
+
   return router;
 };
