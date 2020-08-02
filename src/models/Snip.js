@@ -9,6 +9,6 @@ const Snip = new mongoose.Schema(
   { timestamps: true }
 );
 
-Snip.plugin(ttl, { ttl: 15000 });
+Snip.plugin(ttl, { ttl: '5d' });
 
 module.exports = mongoose.model('Snip', Snip);
