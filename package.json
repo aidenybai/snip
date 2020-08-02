@@ -3,9 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "description": "Dead-simple link shortener",
-  "main": "src/index.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node server/index.js",
     "start:dev": "nodemon"
   },
   "author": "Aiden Bai",
