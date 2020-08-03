@@ -9,7 +9,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/aidenybai/snip)
 [![License](https://img.shields.io/github/license/aidenybai/snip?style=flat-square)](https://img.shields.io/github/license/aidenybai/snip?style=flat-square)
 
-> The simple, no-bullsh\*t link shortener.
+> The simple, no-bs link shortener.
 
 ## Goals
 
