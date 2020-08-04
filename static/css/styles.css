@@ -86,6 +86,7 @@ input:focus,
 
 #url {
   border-radius: 10px !important;
+  padding: 9px !important;
 }
 
 .btn-primary {
@@ -93,7 +94,7 @@ input:focus,
   font-size: 110%;
   background: #7461fb;
   border-color: #7461fb;
-  padding: 10px;
+  padding: 9px !important;
 }
 
 .btn-primary:hover {
@@ -106,12 +107,17 @@ input:focus,
   border-color: rgba(102, 82, 255, 0.95) !important;
 }
 
+.btn-primary:focus {
+  background: rgba(102, 82, 255, 0.95) !important;
+  border-color: rgba(102, 82, 255, 0.95) !important;
+}
+
 .btn-outline-primary {
   border-radius: 10px !important;
   font-size: 110%;
   color: #7461fb;
   border-color: #7461fb;
-  padding: 10px;
+  padding: 9px !important;
   font-weight: bold;
 }
 
@@ -122,6 +128,12 @@ input:focus,
 }
 
 .btn-outline-primary:active {
+  color: rgba(102, 82, 255, 0.95) !important;
+  border-color: rgba(102, 82, 255, 0.95) !important;
+  background: rgba(102, 82, 255, 0.2) !important;
+}
+
+.btn-outline-primary:focus {
   color: rgba(102, 82, 255, 0.95) !important;
   border-color: rgba(102, 82, 255, 0.95) !important;
   background: rgba(102, 82, 255, 0.2) !important;

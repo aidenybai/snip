@@ -6,7 +6,7 @@ const makeid = require('../../utils/makeid.js');
 const captcha = require('../../utils/captcha.js');
 const validateURL = require('../../utils/validateURL.js');
 
-module.exports = class API {
+module.exports = class {
   constructor() {
     this.path = '/v1';
   }

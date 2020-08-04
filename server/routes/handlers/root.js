@@ -2,7 +2,7 @@ const { Router } = require('express');
 const { Base64 } = require('js-base64');
 const Snip = require('../../models/Snip.js');
 
-module.exports = class Root {
+module.exports = class {
   constructor() {
     this.path = '/';
   }
