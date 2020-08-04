@@ -1,11 +1,11 @@
 import fetch from 'isomorphic-fetch';
 import config from '../config/production';
 
-const captcha = async (token) => {
+const captcha = async (token: string) => {
   try {
-    const url = `https://www.google.com/recaptcha/api/siteverify?secret=${config.SECRET}&response=${token}`;
+    const url: string = `https://www.google.com/recaptcha/api/siteverify?secret=${config.SECRET}&response=${token}`;
 
-    const response = await fetch(url, {
+    const response: Response = await fetch(url, {
       method: 'post',
     });
 

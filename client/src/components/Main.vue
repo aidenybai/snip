@@ -21,6 +21,7 @@
             required
           />
         </div>
+
         <transition name="fade">
           <button v-if="!seen" type="submit" class="btn btn-primary px-3 mr-2 shadow">
             <font-awesome-icon :icon="['fas', 'link']" /> Shorten
@@ -31,10 +32,11 @@
             type="button"
             class="btn btn-outline-primary mr-2 shadow"
           >
-            Copy
+            <font-awesome-icon :icon="['fas', 'copy']" /> Copy
           </button>
           ></transition
         >
+
         <p class="mt-2">
           <small class="text-muted"><b>Note:</b> Snips expire after 7 days if inactive.</small>
         </p>
@@ -46,9 +48,6 @@
 <script>
 export default {
   name: 'Main',
-  // props: {
-  //   msg: String,
-  // },
   data: function() {
     return {
       seen: false,
