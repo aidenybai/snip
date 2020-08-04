@@ -92,10 +92,10 @@ export default {
     copy: function() {
       this.$copyText(this.url)
         .then(() => {
-          this.$toasted.success('Copied Link!', { icon: 'check' }).goAway(2000);
+          this.$toasted.success('Copied Link!').goAway(2000);
         })
         .catch((err) => {
-          this.$toasted.error(err, { icon: 'exclamation' }).goAway(5000);
+          this.$toasted.error(err).goAway(5000);
         });
     },
   },
