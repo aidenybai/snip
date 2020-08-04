@@ -1,0 +1,9 @@
+{
+  "name": "Snip",
+  "short_name": "Snip",
+  "theme_color": "#7461FB",
+  "background_color": "#000",
+  "display": "standalone",
+  "start_url": "./index.html",
+  "splash_pages": null
+}
