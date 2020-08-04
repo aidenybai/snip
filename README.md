@@ -4,6 +4,7 @@
 
 # Snip
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/394af265-a105-4fe8-afb9-ef0a68718780/deploy-status)](https://app.netlify.com/sites/snip-client/deploys)
 [![Dependencies](https://img.shields.io/david/aidenybai/snip.svg?style=flat-square)](https://img.shields.io/david/aidenybai/snip.svg?style=flat-square)
 [![Code Size](https://img.shields.io/github/languages/code-size/aidenybai/snip?style=flat-square)](https://img.shields.io/github/languages/code-size/aidenybai/snip?style=flat-square)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/aidenybai/snip)
