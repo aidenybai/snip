@@ -1,8 +1,10 @@
-const { Router } = require('express');
-const { Base64 } = require('js-base64');
-const Snip = require('../../models/Snip.js');
+import { Router } from 'express';
+import { Base64 } from 'js-base64';
+import Snip from '../../models/Snip';
 
-module.exports = class {
+export default class {
+  path: string;
+
   constructor() {
     this.path = '/';
   }
@@ -11,7 +13,7 @@ module.exports = class {
     const router = Router();
 
     router.get('/*', async (req, res) => {
-      const url = await Snip.findOne({ id: req.url.slice(1) });
+      const url: any = await Snip.findOne({ id: req.url.slice(1) });
       if (url) {
         await Snip.findOneAndUpdate(
           { id: req.url.slice(1) },
@@ -25,10 +27,10 @@ module.exports = class {
       }
     });
 
-    router.use('*', (req, res) => {
-      res.boom.notFound();
+    router.use('*', (req, { boom }) => {
+      boom.notFound();
     });
 
     return router;
   }
-};
+}

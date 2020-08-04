@@ -1,12 +1,12 @@
-const Root = require('./handlers/root.js');
-const API = require('./handlers/api.js');
+import Root from './handlers/root';
+import API from './handlers/api';
 
 const routes = [new API(), new Root()];
 
-module.exports = class {
+export default class {
   static registerRoutes(app) {
     routes.forEach((route) => {
       app.use(route.path, route.run());
     });
   }
-};
+}

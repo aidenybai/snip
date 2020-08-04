@@ -1,5 +1,5 @@
-const fetch = require('isomorphic-fetch');
-const URL = require('url');
+import fetch from 'isomorphic-fetch';
+import URL from 'url';
 
 const validateURL = async (url) => {
   if (!url) return { error: true, message: 'You must provide a url body parameter' };
@@ -19,4 +19,4 @@ const validateURL = async (url) => {
   }
 };
 
-module.exports = validateURL;
+export default validateURL;

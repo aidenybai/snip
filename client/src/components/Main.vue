@@ -80,14 +80,14 @@ export default {
           this.processed = true;
           if (data.error) {
             this.seen = false;
-            this.$toasted.error(data.message, { icon: 'exclamation' }).goAway(5000);
+            this.$toasted.error(data.message).goAway(5000);
           } else {
             this.seen = true;
             this.url = data.url;
-            this.$toasted.success('Link shortened!', { icon: 'check' }).goAway(2000);
+            this.$toasted.success('Link shortened!').goAway(2000);
           }
         })
-        .catch((error) => this.$toasted.error(error, { icon: 'exclamation' }).goAway(5000));
+        .catch((error) => this.$toasted.error(error).goAway(5000));
     },
     copy: function() {
       this.$copyText(this.url)

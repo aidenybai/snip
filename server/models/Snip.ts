@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const Snip = new mongoose.Schema(
   {
@@ -12,4 +12,4 @@ const Snip = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Snip', Snip);
+export default mongoose.model('Snip', Snip);

@@ -1,5 +1,5 @@
-const fetch = require('isomorphic-fetch');
-const config = require('../config/production.js');
+import fetch from 'isomorphic-fetch';
+import config from '../config/production';
 
 const captcha = async (token) => {
   try {
@@ -17,4 +17,4 @@ const captcha = async (token) => {
   }
 };
 
-module.exports = captcha;
+export default captcha;

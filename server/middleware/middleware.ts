@@ -1,13 +1,13 @@
-const bodyParser = require('body-parser');
-const boom = require('express-boom');
-const cors = require('cors');
-const compression = require('compression');
-const morgan = require('morgan');
-const token = require('express-bearer-token');
-const ratelimit = require('express-rate-limit');
-const helmet = require('helmet');
-const express = require('express');
-const { join } = require('path');
+import bodyParser from 'body-parser';
+import boom from 'express-boom';
+import cors from 'cors';
+import compression from 'compression';
+import morgan from 'morgan';
+import token from 'express-bearer-token';
+import ratelimit from 'express-rate-limit';
+import helmet from 'helmet';
+import express from 'express';
+import { join } from 'path';
 
 const coreMiddlewares = [
   bodyParser.json(),
@@ -21,7 +21,7 @@ const coreMiddlewares = [
   express.static(join(__dirname, './../public')),
 ];
 
-module.exports = class {
+export default class {
   static registerCoreMiddlewares(app) {
     app.enable('trust proxy', true);
     app.disable('view cache');
@@ -38,4 +38,4 @@ module.exports = class {
       app.use(middleware);
     });
   }
-};
+}

@@ -1,12 +1,14 @@
-const { Router } = require('express');
-const { Base64 } = require('js-base64');
-const normalizeURL = require('normalize-url');
-const Snip = require('../../models/Snip.js');
-const makeid = require('../../utils/makeid.js');
-const captcha = require('../../utils/captcha.js');
-const validateURL = require('../../utils/validateURL.js');
+import { Router } from 'express';
+import { Base64 } from 'js-base64';
+import normalizeURL from 'normalize-url';
+import Snip from '../../models/Snip';
+import makeid from '../../utils/makeid';
+import captcha from '../../utils/captcha';
+import validateURL from '../../utils/validateURL';
 
-module.exports = class {
+export default class {
+  path: string;
+
   constructor() {
     this.path = '/v1';
   }
@@ -14,8 +16,8 @@ module.exports = class {
   run() {
     const router = Router();
 
-    router.post('/url', async (req, res) => {
-      const captchaResponse = await captcha(req.body.token);
+    router.post('/url', async ({ body }, res) => {
+      const captchaResponse = await captcha(body.token);
       if (!captchaResponse.success) return res.boom.forbidden(`Token failure (refresh page)`);
       if (captchaResponse.score < 0.5) {
         return res.boom.forbidden(
@@ -23,14 +25,14 @@ module.exports = class {
         );
       }
 
-      const id = req.body.id ? req.body.id : makeid();
+      const id = body.id ? body.id : makeid();
       const url = await Snip.findOne({ id });
 
       if (url) {
         res.boom.badRequest('ID already taken');
       } else {
         try {
-          const url = normalizeURL(req.body.url);
+          const url = normalizeURL(body.url);
           const validate = await validateURL(url);
 
           if (validate.error) return res.boom.badRequest(validate.message);
@@ -48,8 +50,8 @@ module.exports = class {
       }
     });
 
-    router.get('/url', async (req, res) => {
-      const url = await Snip.findOne({ id: req.query.id });
+    router.get('/url', async ({ query }, res) => {
+      const url = await Snip.findOne({ id: query.id });
 
       if (url) {
         res.json(url);
@@ -64,4 +66,4 @@ module.exports = class {
 
     return router;
   }
-};
+}

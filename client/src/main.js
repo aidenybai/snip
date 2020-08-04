@@ -10,18 +10,12 @@ import { faLink, faHandScissors } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { VueReCaptcha } from 'vue-recaptcha-v3';
 
-// https://github.com/FortAwesome/vue-fontawesome
-
-// refactor js/index.js
-
 library.add(faLink, faHandScissors);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(VueReCaptcha, { siteKey: '6Lery7gZAAAAAJEWi_hdL1VmlSkLHQlnJqN7ZH0B' });
 Vue.use(Clipboard);
-Vue.use(Toasted, {
-  iconPack: 'fontawesome',
-});
+Vue.use(Toasted);
 
 Vue.config.productionTip = false;
 

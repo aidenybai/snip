@@ -1,8 +1,8 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const router = require('./routes/router.js');
-const middleware = require('./middleware/middleware.js');
-const config = require('./config/production.js');
+import express from 'express';
+import mongoose from 'mongoose';
+import router from './routes/router';
+import middleware from './middleware/middleware';
+import config from './config/production';
 
 mongoose.connect(config.MONGO_URL, {
   useNewUrlParser: true,
