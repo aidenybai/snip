@@ -1,4 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+  font-family: 'Circular';
+  src: url(../fonts/CircularStd-Book.ttf);
+}
+
+@font-face {
+  font-family: 'Circular Medium';
+  src: url(../fonts/CircularStd-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Circular Bold';
+  src: url(../fonts/CircularStd-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Circular Black';
+  src: url(../fonts/CircularStd-Black.ttf);
+}
 
 html {
   width: 100% !important;
@@ -8,7 +26,7 @@ html {
 body {
   background: #030b14 !important;
   color: #fff !important;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Circular', sans-serif !important;
   scroll-behavior: smooth !important;
   width: 100% !important;
   height: 100% !important;
