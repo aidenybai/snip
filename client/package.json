@@ -1,0 +1,29 @@
+{
+  "name": "snip",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:dev": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^0.1.10",
+    "bootstrap": "5.0.0-alpha1",
+    "popper.js": "^1.16.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
+    "vue": "^2.5.13",
+    "vue-clipboard2": "^0.3.1",
+    "vue-recaptcha-v3": "^1.9.0",
+    "vue-toasted": "^1.1.28",
+    "webpack": "^4.44.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-beta.6",
+    "@vue/cli-service": "^3.0.0-beta.6",
+    "vue-template-compiler": "^2.5.13"
+  }
+}

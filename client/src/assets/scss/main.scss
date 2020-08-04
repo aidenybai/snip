@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body {
+  background: #030b14 !important;
+  color: #fff !important;
+  font-family: 'Roboto', sans-serif !important;
+  scroll-behavior: smooth !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  &::-webkit-scrollbar {
+    width: 3px !important;
+    height: 3px !important;
+  }
+  
+  &::-webkit-scrollbar-button {
+    width: 0px !important;
+    height: 0px !important;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #e1e1e1 !important;
+    border: 0px none #ffffff !important;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #ffffff !important;
+  }
+  
+  &::-webkit-scrollbar-thumb:active {
+    background: #a6a6a6 !important;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #4b5a68 !important;
+    border: 1px none #ffffff !important;
+  }
+  
+  &::-webkit-scrollbar-track:hover {
+    background: #4b5a68 !important;
+  }
+  
+  &::-webkit-scrollbar-track:active {
+    background: #4b5a68 !important;
+  }
+  
+  &::selection {
+    background: #7461fb !important;
+    color: #fff !important;
+  }  
+}
+
+.container, .row {
+  height: 100% !important;
+}

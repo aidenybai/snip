@@ -1,0 +1,58 @@
+.btn {
+  width: 100% !important;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+  border-color: #7461fb !important;
+}
+
+.btn-primary {
+  font-size: 110% !important;
+  background: #7461fb !important;
+  border-color: #7461fb !important;
+  padding: 9px !important;
+  border-radius: 10px !important;
+
+  &:hover {
+    background: rgba(102, 82, 255, 0.95) !important;
+    border-color: rgba(102, 82, 255, 0.95) !important;
+  }
+
+  &:active {
+    background: rgba(102, 82, 255, 0.95) !important;
+    border-color: rgba(102, 82, 255, 0.95) !important;
+  }
+
+  &:focus {
+    background: rgba(102, 82, 255, 0.95) !important;
+    border-color: rgba(102, 82, 255, 0.95) !important;
+  }
+}
+
+.btn-outline-primary {
+  font-size: 110% !important;
+  color: #7461fb !important;
+  border-color: #7461fb !important;
+  padding: 9px !important;
+  font-weight: bold !important;
+  border-radius: 10px !important;
+  
+  &:hover {
+    color: rgba(102, 82, 255, 0.95) !important;
+    border-color: rgba(102, 82, 255, 0.95) !important;
+    background: rgba(102, 82, 255, 0.1) !important;
+  }
+
+  &:active {
+    color: rgba(102, 82, 255, 0.95) !important;
+    border-color: rgba(102, 82, 255, 0.95) !important;
+    background: rgba(102, 82, 255, 0.2) !important;
+  }
+  
+  &:focus {
+    color: rgba(102, 82, 255, 0.95) !important;
+    border-color: rgba(102, 82, 255, 0.95) !important;
+    background: rgba(102, 82, 255, 0.2) !important;
+  }
+}

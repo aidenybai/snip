@@ -1,0 +1,18 @@
+
+.card {
+  background: #030b14 !important;
+  width: 420px !important;
+  box-shadow: none !important;
+
+  @media only screen and (max-width: 400px) {
+    width: 100% !important;
+  }
+}
+
+.card-title {
+  font-size: 300% !important;
+}
+
+.card-subtitle {
+  font-size: 120% !important;
+}
