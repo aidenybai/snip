@@ -79,22 +79,22 @@ export default {
           this.processed = true;
           if (data.error) {
             this.seen = false;
-            this.$toasted.error(data.message).goAway(5000);
+            this.$toast.error(data.message, { timeout: 5000 });
           } else {
             this.seen = true;
             this.url = data.url;
-            this.$toasted.success('Link shortened!').goAway(2000);
+            this.$toast.success('Link Shortened!', { timeout: 2000 });
           }
         })
-        .catch((error) => this.$toasted.error(error).goAway(5000));
+        .catch((err) => this.$toast.error(err, { timeout: 5000 }));
     },
     copy: function() {
       this.$copyText(this.url)
         .then(() => {
-          this.$toasted.success('Copied Link!').goAway(2000);
+          this.$toast('Copied Link!', { timeout: 2000 });
         })
         .catch((err) => {
-          this.$toasted.error(err).goAway(5000);
+          this.$toast.error(err, { timeout: 5000 });
         });
     },
   },
