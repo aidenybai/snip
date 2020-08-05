@@ -41,7 +41,7 @@ export default class {
           if (existing) {
             res.json({ url: `https://snip.ml/${existing.id}`, id: existing.id });
           } else {
-            await Snip.create({ url: Base64.encode(url), id, clicks: 0 });
+            await Snip.create({ url: Base64.encode(url), id });
             res.json({ url: `https://snip.ml/${id}`, id });
           }
         } catch (err) {
