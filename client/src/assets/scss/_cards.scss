@@ -3,6 +3,8 @@
   background: #030b14 !important;
   width: 420px !important;
   box-shadow: none !important;
+  animation: zoomIn, fadeIn !important;
+  animation-duration: 0.8s !important;
 
   @media only screen and (max-width: 400px) {
     width: 100% !important;
