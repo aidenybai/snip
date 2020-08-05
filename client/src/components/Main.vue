@@ -1,10 +1,10 @@
 <template>
   <div class="card text-center mx-auto my-auto">
     <div class="card-body">
-      <h3 class="card-title shadow"><font-awesome-icon :icon="['fas', 'hand-scissors']" /> Snip</h3>
-      <h6 class="card-subtitle mb-3 text-muted shadow">
-        The simple, no-bs
-        <a href="https://en.wikipedia.org/wiki/URL_shortening" target="_blank">link shortener</a>.
+      <h3 class="card-title"><font-awesome-icon :icon="['fas', 'hand-scissors']" /> Snip</h3>
+      <h6 class="card-subtitle mb-3 text-muted">
+        The simple, no-<font-awesome-icon :icon="['fas', 'poo']" />
+        link shortener.
       </h6>
       <form v-on:submit.prevent="shorten()">
         <div class="form-group mb-3">
@@ -13,7 +13,7 @@
             v-model="url"
             :autocomplete="seen"
             type="text"
-            class="form-control shadow"
+            class="form-control"
             id="url"
             maxlength="50000"
             minlength="3"
@@ -38,7 +38,7 @@
         >
 
         <p class="mt-2">
-          <small class="text-muted"><b>Note:</b> Snips expire after 7 days if inactive.</small>
+          <small class="text-muted" v-html="tip"></small>
         </p>
       </form>
     </div>
@@ -46,6 +46,15 @@
 </template>
 
 <script>
+const tips = [
+  '<b>Note:</b> Inactive Snips expire after 1 week.',
+  '<b>Note:</b> Snip is protected by ReCaptcha V3.',
+  '<b>Note:</b> Snip is powered by Vue & Netlify!',
+  '<b>Note:</b> Snip is created by <a href="https://aiden.codes">Aiden Bai</a>.',
+  '<b>Note:</b> Snip\'s character cap is 50k characters.',
+  '<b>Note:</b> Snip is <a href="https://github.com/aidenybai/snip">open source on Github!</a>'
+]
+
 export default {
   name: 'Main',
   data: function() {
@@ -53,6 +62,7 @@ export default {
       seen: false,
       processed: true,
       url: '',
+      tip: tips[Math.floor((Math.random() * tips.length))]
     };
   },
   methods: {
@@ -97,9 +107,6 @@ export default {
           this.$toast.error(err, { timeout: 5000 });
         });
     },
-    track () {
-      this.$ga.page('/')
-    }
   },
 };
 </script>
