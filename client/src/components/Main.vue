@@ -97,6 +97,9 @@ export default {
           this.$toast.error(err, { timeout: 5000 });
         });
     },
+    track () {
+      this.$ga.page('/')
+    }
   },
 };
 </script>
