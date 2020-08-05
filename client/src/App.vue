@@ -1,17 +1,17 @@
 <template>
   <div class="container">
     <div class="row h-100">
-      <Main />
+      <Container />
     </div>
   </div>
 </template>
 
 <script>
-import Main from './components/Main.vue';
+import Container from './components/Container.vue';
 export default {
   name: 'app',
   components: {
-    Main,
+    Container,
   },
 };
 </script>

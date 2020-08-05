@@ -18,6 +18,7 @@
     "vue": "^2.5.13",
     "vue-clipboard2": "^0.3.1",
     "vue-recaptcha-v3": "^1.9.0",
+    "vue-router": "^3.4.0",
     "vue-toastification": "^1.7.6",
     "webpack": "^4.44.1"
   },

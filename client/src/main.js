@@ -1,4 +1,6 @@
 import Vue from 'vue';
+import router from './router';
+import snip from '@/plugins/snip';
 
 import 'popper.js';
 import 'bootstrap';
@@ -24,6 +26,7 @@ import App from './App.vue';
 library.add(faLink, faHandScissors, faCopy, faPoo);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
+Vue.use(snip);
 Vue.use(VueReCaptcha, { siteKey: '6Lery7gZAAAAAJEWi_hdL1VmlSkLHQlnJqN7ZH0B' });
 Vue.use(Clipboard);
 Vue.use(Toast, {
@@ -34,5 +37,6 @@ Vue.use(Toast, {
 Vue.config.productionTip = false;
 
 new Vue({
+  router,
   render: (h) => h(App),
 }).$mount('#app');
