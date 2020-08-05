@@ -1,3 +1,15 @@
+$vt-color-success: #00daab85;
+$vt-color-error: #ff11547e;
+$vt-color-info: #7361fb4b;
+
+@import "vue-toastification/src/scss/_variables";
+@import "vue-toastification/src/scss/_toastContainer";
+@import "vue-toastification/src/scss/_toast";
+@import "vue-toastification/src/scss/_closeButton";
+@import "vue-toastification/src/scss/_progressBar";
+@import "vue-toastification/src/scss/_icon";
+@import "vue-toastification/src/scss/animations/_bounce";
+
 @font-face {
   font-family: 'Circular';
   src: url(https://snip.ml/fonts/CircularStd-Book.ttf);

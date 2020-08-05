@@ -91,7 +91,7 @@ export default {
     copy: function() {
       this.$copyText(this.url)
         .then(() => {
-          this.$toast('Copied Link!', { timeout: 2000 });
+          this.$toast.info('Copied Link!', { timeout: 2000 });
         })
         .catch((err) => {
           this.$toast.error(err, { timeout: 5000 });

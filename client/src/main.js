@@ -12,7 +12,13 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { VueReCaptcha } from 'vue-recaptcha-v3';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'vue-toastification/dist/index.css';
+import './assets/scss/main.scss';
+import './assets/scss/_buttons.scss';
+import './assets/scss/_cards.scss';
+import './assets/scss/_inputs.scss';
+import './assets/scss/_transitions.scss';
+import './assets/scss/_typography.scss';
+import './assets/scss/_misc.scss';
 
 import App from './App.vue';
 
@@ -22,7 +28,10 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.use(VueReCaptcha, { siteKey: '6Lery7gZAAAAAJEWi_hdL1VmlSkLHQlnJqN7ZH0B' });
 Vue.use(VueAnalytics, { id: 'UA-110509374-3' });
 Vue.use(Clipboard);
-Vue.use(Toast);
+Vue.use(Toast, {
+  maxToasts: 3,
+  newestOnTop: true,
+});
 
 Vue.config.productionTip = false;
 
