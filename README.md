@@ -1,5 +1,5 @@
 <a href="https://snip.ml">
-  <img src="https://snip.ml/assets/img/logo.png" width="80px" align="right" />
+  <img src="https://snip.ml/img/logo.png" width="80px" align="right" />
 </a>
 
 # Snip
