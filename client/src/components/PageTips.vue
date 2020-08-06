@@ -6,8 +6,8 @@
 
 <script>
 const tips = [
-  '<b>Note:</b> Snip is protected by ReCaptcha V3.',
-  '<b>Note:</b> Snip is powered by Vue & Netlify!',
+  '<b>Note:</b> Snip is protected by <a href="https://www.google.com/recaptcha/about">reCAPTCHA</a>.',
+  '<b>Note:</b> Snip is powered by <a href="https://vuejs.org">Vue</a> & <a href="https://netlify.com">Netlify</a>!',
   '<b>Note:</b> Snip is created by <a href="https://aiden.codes">Aiden Bai</a>.',
   '<b>Note:</b> Snip\'s character cap is 50k characters.',
   '<b>Note:</b> Snip is <a href="https://github.com/aidenybai/snip">open source on Github!</a>'
