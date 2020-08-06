@@ -80,12 +80,12 @@ body {
   &::-webkit-scrollbar-track:active {
     background: #4b5a68 !important;
   }
-  
-  &::selection {
-    background: #7461fb !important;
-    color: #fff !important;
-  }  
 }
+
+::selection {
+  background: #7461fb !important;
+  color: #fff !important;
+}  
 
 .container, .row {
   height: 100% !important;
