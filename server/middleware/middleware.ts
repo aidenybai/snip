@@ -3,7 +3,6 @@ import boom from 'express-boom';
 import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
-import token from 'express-bearer-token';
 import ratelimit from 'express-rate-limit';
 import helmet from 'helmet';
 import express from 'express';
@@ -16,7 +15,6 @@ const coreMiddlewares = [
   cors({ origin: '*' }),
   compression(),
   morgan('dev'),
-  token(),
   helmet(),
   express.static(join(__dirname, './../public')),
 ];
