@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { Base64 } from 'js-base64';
 import normalizeURL from 'normalize-url';
 import Snip from '../../models/Snip';
 import makeid from '../../utils/makeid';
@@ -36,12 +35,12 @@ export default class {
           const validate = await validateURL(url);
 
           if (validate.error) return res.boom.badRequest(validate.message);
-          const existing = await Snip.findOne({ url: Base64.encode(url) });
+          const existing = await Snip.findOne({ url });
 
           if (existing) {
             res.json({ url: `https://snip.ml/${existing.id}`, id: existing.id });
           } else {
-            await Snip.create({ url: Base64.encode(url), id });
+            await Snip.create({ url, id });
             res.json({ url: `https://snip.ml/${id}`, id });
           }
         } catch (err) {

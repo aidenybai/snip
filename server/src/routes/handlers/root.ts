@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { Base64 } from 'js-base64';
 import Snip from '../../models/Snip';
 
 export default class {
@@ -15,7 +14,7 @@ export default class {
     router.get('/*', async (req, res) => {
       const url: any = await Snip.findOne({ id: req.url.slice(1) });
       if (url) {
-        res.redirect(301, Base64.decode(url.url));
+        res.redirect(301, url.url);
       } else {
         res.redirect(301, 'https://snip.ml');
       }
