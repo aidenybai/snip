@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'PageHeader',
-  data: function() {
+  data: () => {
     return {
       title: `Snip`,
       subtitle: `The simple, no-bs link shortener.`,

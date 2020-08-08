@@ -37,7 +37,7 @@ export default {
   components: {
     PageTips,
   },
-  data: function() {
+  data: () => {
     return {
       seen: false,
       processed: true,
@@ -45,7 +45,7 @@ export default {
     };
   },
   methods: {
-    shorten: async function() {
+    async shorten() {
       if (!this.processed) return;
       this.processed = false;
 
@@ -63,7 +63,7 @@ export default {
         this.$toast.success('Link Shortened!', { timeout: 2000 });
       }
     },
-    copy: async function() {
+    async copy() {
       try {
         await this.$copyText(this.url);
         this.$toast.info('Copied Link!', { timeout: 2000 });
