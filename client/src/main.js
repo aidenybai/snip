@@ -26,7 +26,12 @@ library.add(faLink, faHandScissors, faCopy, faPoo);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(snip);
-Vue.use(VueReCaptcha, { siteKey: '6Lery7gZAAAAAJEWi_hdL1VmlSkLHQlnJqN7ZH0B' });
+Vue.use(VueReCaptcha, {
+  siteKey: '6Lery7gZAAAAAJEWi_hdL1VmlSkLHQlnJqN7ZH0B',
+  loaderOptions: {
+    useRecaptchaNet: true,
+  },
+});
 Vue.use(Clipboard);
 Vue.use(Toast, {
   maxToasts: 3,
