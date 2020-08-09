@@ -7,7 +7,7 @@ import 'bootstrap';
 import Clipboard from 'vue-clipboard2';
 import Toast from 'vue-toastification';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faLink, faHandScissors, faCopy, faPoo } from '@fortawesome/free-solid-svg-icons';
+import { faLink, faHandScissors, faCopy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { VueReCaptcha } from 'vue-recaptcha-v3';
 
@@ -22,7 +22,7 @@ import './assets/scss/_misc.scss';
 
 import App from './App.vue';
 
-library.add(faLink, faHandScissors, faCopy, faPoo);
+library.add(faLink, faHandScissors, faCopy);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(snip);

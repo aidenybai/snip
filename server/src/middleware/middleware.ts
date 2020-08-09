@@ -16,7 +16,6 @@ const coreMiddlewares = [
   compression(),
   morgan('dev'),
   helmet(),
-  express.static(join(__dirname, './../public')),
 ];
 
 export default class {
