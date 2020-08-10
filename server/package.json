@@ -5,7 +5,7 @@
   "description": "The simple, no-bs link shortener.",
   "main": "dist/app.js",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "pm2 start dist/app.js -i max",
     "start:dev": "nodemon",
     "build": "tsc"
   },
@@ -23,6 +23,7 @@
     "@types/morgan": "^1.9.1",
     "@types/node": "^14.0.27",
     "nodemon": "^2.0.3",
+    "pm2": "^4.4.0",
     "ts-node": "^8.10.1",
     "tslint": "^5.20.1",
     "typescript": "^3.7.4"

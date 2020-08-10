@@ -15,8 +15,8 @@ export default class {
   run() {
     const router = Router();
 
-    router.post('/url', async ({ body }, res) => {
-      const captchaResponse = await captcha(body.token);
+    router.post('/url', async (req, res) => {
+      const captchaResponse = await captcha(req.body.token);
       if (!captchaResponse.success) return res.boom.forbidden(`Token failure (refresh page)`);
       if (captchaResponse.score < 0.5) {
         return res.boom.forbidden(
@@ -24,14 +24,14 @@ export default class {
         );
       }
 
-      const id = body.id ? body.id : makeid();
+      const id = req.body.id ? req.body.id : makeid();
       const url = await Snip.findOne({ id });
 
       if (url) {
         res.boom.badRequest('ID already taken');
       } else {
         try {
-          const url = normalizeURL(body.url);
+          const url = normalizeURL(req.body.url);
           const validate = await validateURL(url);
 
           if (validate.error) return res.boom.badRequest(validate.message);
@@ -49,8 +49,8 @@ export default class {
       }
     });
 
-    router.get('/url', async ({ query }, res) => {
-      const url = await Snip.findOne({ id: query.id });
+    router.get('/url', async (req, res) => {
+      const url = await Snip.findOne({ id: req.query.id });
 
       if (url) {
         res.json(url);
