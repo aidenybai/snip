@@ -6,7 +6,7 @@ const Snip = new mongoose.Schema(
     url: { type: String, required: true },
     expireAt: {
       type: Date,
-      default: new Date(Date.now() + 604800000).toISOString(),
+      default: new Date(Date.now() + 2.62974383e9).toISOString(),
     },
   },
   { timestamps: true }

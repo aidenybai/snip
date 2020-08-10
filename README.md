@@ -16,7 +16,7 @@
 
 - **Speed**: Snip has low performance overhead and is compressed with deflate and gzip.
 - **Security**: Snip is secured with 128-bit SSL and no user data is stored (privacy baby)
-- **Sustainable**: Snip relies on a 7 day TTL to keep the service going in good health.
+- **Sustainable**: Snip relies on a 1 month TTL to keep the service going in good health.
 - **Simplicity**: Snip provides a high-level interface that’s easy to use, understand, and debug.
 
 ## Getting Started
