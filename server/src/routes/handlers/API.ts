@@ -1,0 +1,77 @@
+import { Router } from 'express';
+import Route from './Route';
+import normalizeURL from 'normalize-url';
+import Snip from '../../models/Snip';
+import Hash from '../../utils/Hash';
+import Captcha from '../../utils/Captcha';
+import Validate from '../../utils/Validate';
+
+class API extends Route {
+  path: string;
+  hash: Hash;
+  captcha: Captcha;
+  validate: Validate;
+
+  constructor() {
+    super('/v1');
+    this.hash = new Hash();
+    this.captcha = new Captcha();
+    this.validate = new Validate();
+  }
+
+  run(): Router {
+    const router = Router();
+
+    router.post('/url', async (req, res) => {
+      const captchaResponse = await this.captcha.data(req.body.token);
+      if (!captchaResponse.success) return res.boom.forbidden(`Token failure (refresh page)`);
+      if (captchaResponse.score < 0.5) {
+        return res.boom.forbidden(
+          `Your bot score (${captchaResponse.score || null}) is less than 0.5`
+        );
+      }
+
+      const id = req.body.id ? req.body.id : this.hash.generate();
+      const url = await Snip.findOne({ id });
+
+      if (url) {
+        res.boom.badRequest('ID already taken');
+      } else {
+        try {
+          const url = normalizeURL(req.body.url);
+          const validate = await this.validate.url(url);
+
+          if (validate.error) return res.boom.badRequest(validate.message);
+          const existing = await Snip.findOne({ url });
+
+          if (existing) {
+            res.json({ url: `https://snip.ml/${existing.id}`, id: existing.id });
+          } else {
+            await Snip.create({ url, id });
+            res.json({ url: `https://snip.ml/${id}`, id });
+          }
+        } catch (err) {
+          res.boom.badImplementation(err);
+        }
+      }
+    });
+
+    router.get('/url', async (req, res) => {
+      const url = await Snip.findOne({ id: req.query.id });
+
+      if (url) {
+        res.json(url);
+      } else {
+        res.boom.badRequest('url not found');
+      }
+    });
+
+    router.get('/ping', async (req, res) => {
+      res.send('OK');
+    });
+
+    return router;
+  }
+}
+
+export default API;

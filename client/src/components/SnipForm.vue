@@ -6,6 +6,7 @@
         v-model="url"
         :autocomplete="seen"
         type="text"
+        id="url"
         class="form-control"
         maxlength="50000"
         minlength="3"
