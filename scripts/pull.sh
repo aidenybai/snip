@@ -1,0 +1,1 @@
+git pull --force && git reset --hard

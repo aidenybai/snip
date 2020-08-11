@@ -1,1 +1,0 @@
-git pull --force && git reset --hard && sh scripts/INITIALIZE_SERVER.sh
