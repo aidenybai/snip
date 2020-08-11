@@ -1,1 +1,1 @@
-/:id  https://api.snip.ml/:id 404!
+/:id  https://api.snip.ml/:id 301!
