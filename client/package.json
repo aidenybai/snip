@@ -1,10 +1,9 @@
 {
   "name": "snip",
+  "version": "0.1.0",
   "private": true,
-  "version": "1.0.0",
-  "description": "The simple, no-bs link shortener.",
   "scripts": {
-    "start:dev": "vue-cli-service serve --open",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build && cp redirects.txt dist/_redirects",
     "lint": "vue-cli-service lint"
   },
@@ -12,18 +11,31 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/vue-fontawesome": "^0.1.10",
-    "bootstrap": "5.0.0-alpha1",
-    "popper.js": "^1.16.0",
-    "sass": "^1.26.10",
-    "sass-loader": "^9.0.2",
-    "vue": "^2.5.13",
+    "bootstrap": "^5.0.0-alpha1",
+    "core-js": "^3.6.5",
+    "popper.js": "^1.16.1",
+    "register-service-worker": "^1.7.1",
+    "vue": "^2.6.11",
     "vue-clipboard2": "^0.3.1",
     "vue-recaptcha-v3": "^1.9.0",
     "vue-toastification": "^1.7.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-beta.6",
-    "@vue/cli-service": "^3.0.0-beta.6",
-    "vue-template-compiler": "^2.5.13"
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.9.3",
+    "vue-template-compiler": "^2.6.11"
   }
 }

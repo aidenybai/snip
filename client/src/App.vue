@@ -6,12 +6,14 @@
   </div>
 </template>
 
-<script>
-import Container from './components/Container.vue';
-export default {
-  name: 'app',
+<script lang="ts">
+import Vue from 'vue';
+import Container from '@/components/Container.vue';
+
+export default Vue.extend({
+  name: 'App',
   components: {
     Container,
   },
-};
+});
 </script>

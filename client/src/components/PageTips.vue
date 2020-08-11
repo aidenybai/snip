@@ -4,7 +4,9 @@
   </p>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+
 const tips = [
   '<b>Tip:</b> Snip is protected by <a target="_blank" href="https://www.google.com/recaptcha/about">reCAPTCHA</a>.',
   '<b>Tip:</b> Snip is powered by <a target="_blank" href="https://vuejs.org">Vue</a> & <a target="_blank" href="https://netlify.com">Netlify</a>!',
@@ -14,12 +16,12 @@ const tips = [
   '<b>Tip:</b> Snip is <a target="_blank" href="https://github.com/aidenybai/snip">open source on Github!</a>',
 ];
 
-export default {
+export default Vue.extend({
   name: 'PageTips',
   data() {
     return {
       tip: tips[Math.floor(Math.random() * tips.length)],
     };
   },
-};
+});
 </script>

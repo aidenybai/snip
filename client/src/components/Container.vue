@@ -7,15 +7,16 @@
   </div>
 </template>
 
-<script>
-import PageHeader from '@/components/PageHeader';
-import SnipForm from '@/components/SnipForm';
+<script lang="ts">
+import Vue from 'vue';
+import PageHeader from '@/components/PageHeader.vue';
+import SnipForm from '@/components/SnipForm.vue';
 
-export default {
+export default Vue.extend({
   name: 'Container',
   components: {
     PageHeader,
     SnipForm,
   },
-};
+});
 </script>

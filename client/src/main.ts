@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import './registerServiceWorker';
 import snip from '@/plugins/snip';
 
 import 'popper.js';

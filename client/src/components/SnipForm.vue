@@ -30,9 +30,10 @@
 </template>
 
 <script>
-import PageTips from '@/components/PageTips';
+import Vue from 'vue';
+import PageTips from '@/components/PageTips.vue';
 
-export default {
+export default Vue.extend({
   name: 'SnipForm',
   components: {
     PageTips,
@@ -48,11 +49,9 @@ export default {
     async shorten() {
       if (!this.processed) return;
       this.processed = false;
-
       await this.$recaptchaLoaded();
       const token = await this.$recaptcha('submit');
       const data = await this.$snip.create(this.url, token);
-
       this.processed = true;
       if (data.error) {
         this.seen = false;
@@ -72,5 +71,5 @@ export default {
       }
     },
   },
-};
+});
 </script>

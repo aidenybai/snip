@@ -11,7 +11,7 @@ const manager = new Vue({
     };
   },
   methods: {
-    async create(url, token) {
+    async create(url: string, token: string) {
       try {
         const res = await fetch(this.baseURL, {
           headers: this.headers,
@@ -24,10 +24,10 @@ const manager = new Vue({
         const data = await res.json();
         return data;
       } catch (err) {
-        throw new Error({ error: true, message: err });
+        throw new Error(err);
       }
     },
-    async get(id) {
+    async get(id: string) {
       try {
         const res = await fetch(`${this.baseURL}?id=${id}`);
         const data = await res.json();
@@ -40,7 +40,8 @@ const manager = new Vue({
 });
 
 export default {
-  install(MainVue) {
+  install(MainVue: any) {
+    /* eslint-disable no-param-reassign */
     MainVue.prototype.$snip = manager;
   },
 };

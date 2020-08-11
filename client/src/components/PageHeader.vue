@@ -5,14 +5,16 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
   name: 'PageHeader',
   data() {
     return {
-      title: `Snip`,
-      subtitle: `The simple, no-bs link shortener.`,
+      title: 'Snip',
+      subtitle: 'The simple, no-bs link shortener.',
     };
   },
-};
+});
 </script>
