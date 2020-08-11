@@ -7,7 +7,6 @@
         :autocomplete="seen"
         type="text"
         class="form-control"
-        id="url"
         maxlength="50000"
         minlength="3"
         placeholder="Enter link"
@@ -37,7 +36,7 @@ export default {
   components: {
     PageTips,
   },
-  data: () => {
+  data() {
     return {
       seen: false,
       processed: true,

@@ -23,7 +23,7 @@ const manager = new Vue({
         });
         const data = await res.json();
         return data;
-      } catch(err) {
+      } catch (err) {
         throw new Error({ error: true, message: err });
       }
     },
@@ -32,11 +32,10 @@ const manager = new Vue({
         const res = await fetch(`${this.baseURL}?id=${id}`);
         const data = await res.json();
         return data;
-      } catch(err) {
+      } catch (err) {
         throw new Error(err);
       }
-    }
-    
+    },
   },
 });
 

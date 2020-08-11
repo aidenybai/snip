@@ -29,4 +29,4 @@ class Snip {
 
 const snip = new Snip();
 
-export default mongoose.model('Snip', snip.schema());;
+export default mongoose.model('Snip', snip.schema());

@@ -23,14 +23,13 @@ $vt-color-error: #ff11547e;
 $vt-color-info: #7361fb4b;
 $vt-font-family: 'Circular', sans-serif !default;
 
-@import "vue-toastification/src/scss/_variables";
-@import "vue-toastification/src/scss/_toastContainer";
-@import "vue-toastification/src/scss/_toast";
-@import "vue-toastification/src/scss/_closeButton";
-@import "vue-toastification/src/scss/_progressBar";
-@import "vue-toastification/src/scss/_icon";
-@import "vue-toastification/src/scss/animations/_bounce";
-
+@import 'vue-toastification/src/scss/_variables';
+@import 'vue-toastification/src/scss/_toastContainer';
+@import 'vue-toastification/src/scss/_toast';
+@import 'vue-toastification/src/scss/_closeButton';
+@import 'vue-toastification/src/scss/_progressBar';
+@import 'vue-toastification/src/scss/_icon';
+@import 'vue-toastification/src/scss/animations/_bounce';
 
 html {
   width: 100% !important;
@@ -38,7 +37,7 @@ html {
 }
 
 body {
-  background: #030B14 !important;
+  background: #030b14 !important;
   color: #fff !important;
   font-family: 'Circular', sans-serif !important;
   scroll-behavior: smooth !important;
@@ -49,34 +48,34 @@ body {
     width: 3px !important;
     height: 3px !important;
   }
-  
+
   &::-webkit-scrollbar-button {
     width: 0px !important;
     height: 0px !important;
   }
-  
+
   &::-webkit-scrollbar-thumb {
     background: #e1e1e1 !important;
     border: 0px none #ffffff !important;
   }
-  
+
   &::-webkit-scrollbar-thumb:hover {
     background: #ffffff !important;
   }
-  
+
   &::-webkit-scrollbar-thumb:active {
     background: #a6a6a6 !important;
   }
-  
+
   &::-webkit-scrollbar-track {
     background: #4b5a68 !important;
     border: 1px none #ffffff !important;
   }
-  
+
   &::-webkit-scrollbar-track:hover {
     background: #4b5a68 !important;
   }
-  
+
   &::-webkit-scrollbar-track:active {
     background: #4b5a68 !important;
   }
@@ -85,8 +84,9 @@ body {
 ::selection {
   background: #7461fb !important;
   color: #fff !important;
-}  
+}
 
-.container, .row {
+.container,
+.row {
   height: 100% !important;
 }

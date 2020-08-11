@@ -16,7 +16,7 @@ const tips = [
 
 export default {
   name: 'PageTips',
-  data: () => {
+  data() {
     return {
       tip: tips[Math.floor(Math.random() * tips.length)],
     };

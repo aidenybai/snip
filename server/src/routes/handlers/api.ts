@@ -74,4 +74,4 @@ class API extends Route {
   }
 }
 
-export default API; 
+export default API;

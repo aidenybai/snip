@@ -15,7 +15,7 @@ export default {
   name: 'Container',
   components: {
     PageHeader,
-    SnipForm
-  }
+    SnipForm,
+  },
 };
 </script>
