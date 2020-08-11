@@ -1,6 +1,6 @@
 import { Express } from 'express';
-import Root from './handlers/root';
-import API from './handlers/api';
+import Root from './handlers/Root';
+import API from './handlers/API';
 
 const routes = [new API(), new Root()];
 

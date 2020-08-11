@@ -5,8 +5,6 @@ import compression from 'compression';
 import morgan from 'morgan';
 import ratelimit from 'express-rate-limit';
 import helmet from 'helmet';
-import express from 'express';
-import { join } from 'path';
 
 const coreMiddlewares = [
   bodyParser.json(),
@@ -18,7 +16,7 @@ const coreMiddlewares = [
   helmet(),
 ];
 
-export default class {
+class Middleware {
   static registerCoreMiddlewares(app) {
     app.enable('trust proxy', true);
     app.disable('view cache');
@@ -36,3 +34,5 @@ export default class {
     });
   }
 }
+
+export default Middleware;

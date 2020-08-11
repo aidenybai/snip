@@ -1,14 +1,15 @@
 import { Router } from 'express';
+import Route from './Route';
 import Snip from '../../models/Snip';
 
-export default class {
+class Root extends Route {
   path: string;
 
   constructor() {
-    this.path = '/';
+    super('/');
   }
 
-  run() {
+  run(): Router {
     const router = Router();
 
     router.get('/*', async (req, res) => {
@@ -28,3 +29,5 @@ export default class {
     return router;
   }
 }
+
+export default Root;

@@ -5,7 +5,7 @@
   "description": "The simple, no-bs link shortener.",
   "main": "dist/app.js",
   "scripts": {
-    "start": "pm2 start dist/app.js -i max",
+    "start": "node dist/app.js",
     "start:dev": "nodemon",
     "build": "tsc"
   },
@@ -23,7 +23,6 @@
     "@types/morgan": "^1.9.1",
     "@types/node": "^14.0.27",
     "nodemon": "^2.0.3",
-    "pm2": "^4.4.0",
     "ts-node": "^8.10.1",
     "tslint": "^5.20.1",
     "typescript": "^3.7.4"
@@ -40,6 +39,7 @@
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "^5.8.4",
     "morgan": "^1.10.0",
+    "ms": "^2.1.2",
     "normalize-url": "^5.0.0",
     "short-unique-id": "^3.0.4"
   }

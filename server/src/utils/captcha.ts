@@ -1,20 +1,25 @@
-import fetch from 'isomorphic-fetch';
+import Fetch from './Fetch';
 import config from '../config/production';
 
-const captcha = async (token: string) => {
-  try {
-    const url: string = `https://www.google.com/recaptcha/api/siteverify?secret=${config.SECRET}&response=${token}`;
+class Captcha {
+  fetch: Fetch;
+  secret: string;
 
-    const response: Response = await fetch(url, {
-      method: 'post',
-    });
-
-    const body = await response.json();
-
-    return body;
-  } catch (err) {
-    return undefined;
+  constructor() {
+    this.fetch = new Fetch();
+    this.secret = config.SECRET;
   }
-};
 
-export default captcha;
+  async data(token): Promise<any> {
+    try {
+      const url: string = `https://www.google.com/recaptcha/api/siteverify?secret=${this.secret}&response=${token}`;
+      const body = await this.fetch.post({ url });
+
+      return body;
+    } catch (err) {
+      return undefined;
+    }
+  }
+}
+
+export default Captcha;

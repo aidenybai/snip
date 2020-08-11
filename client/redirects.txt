@@ -1,5 +1,3 @@
 /terms.html  /terms 200
 
-/ads.txt https://api.nitropay.com/v1/ads-####.txt 301!
-
 /:id  https://api.snip.ml/:id 301!

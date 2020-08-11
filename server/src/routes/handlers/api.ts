@@ -1,22 +1,29 @@
 import { Router } from 'express';
+import Route from './Route';
 import normalizeURL from 'normalize-url';
 import Snip from '../../models/Snip';
-import makeid from '../../utils/makeid';
-import captcha from '../../utils/captcha';
-import validateURL from '../../utils/validateURL';
+import Hash from '../../utils/Hash';
+import Captcha from '../../utils/Captcha';
+import Validate from '../../utils/Validate';
 
-export default class {
+class API extends Route {
   path: string;
+  hash: Hash;
+  captcha: Captcha;
+  validate: Validate;
 
   constructor() {
-    this.path = '/v1';
+    super('/v1');
+    this.hash = new Hash();
+    this.captcha = new Captcha();
+    this.validate = new Validate();
   }
 
-  run() {
+  run(): Router {
     const router = Router();
 
     router.post('/url', async (req, res) => {
-      const captchaResponse = await captcha(req.body.token);
+      const captchaResponse = await this.captcha.data(req.body.token);
       if (!captchaResponse.success) return res.boom.forbidden(`Token failure (refresh page)`);
       if (captchaResponse.score < 0.5) {
         return res.boom.forbidden(
@@ -24,7 +31,7 @@ export default class {
         );
       }
 
-      const id = req.body.id ? req.body.id : makeid();
+      const id = req.body.id ? req.body.id : this.hash.generate();
       const url = await Snip.findOne({ id });
 
       if (url) {
@@ -32,7 +39,7 @@ export default class {
       } else {
         try {
           const url = normalizeURL(req.body.url);
-          const validate = await validateURL(url);
+          const validate = await this.validate.url(url);
 
           if (validate.error) return res.boom.badRequest(validate.message);
           const existing = await Snip.findOne({ url });
@@ -66,3 +73,5 @@ export default class {
     return router;
   }
 }
+
+export default API; 
