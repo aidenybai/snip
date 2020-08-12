@@ -13,8 +13,9 @@ class Root extends Route {
   run(): Router {
     const router = Router();
 
+    // eslint-disable-next-line consistent-return
     router.get('/*', async (req, res) => {
-      if (!req.url.slice(1)) res.boom.notFound();
+      if (!req.url.slice(1)) return res.boom.notFound();
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const url: any = await Snip.findOne({ id: req.url.slice(1) });
       if (url) {
