@@ -46,12 +46,12 @@ class API extends Route {
           const validate = await this.validate.url(normalizedURL);
 
           if (validate.error) return res.boom.badRequest(validate.message);
-          const existing = await Snip.findOne({ url });
+          const existing = await Snip.findOne({ url: normalizedURL });
 
           if (existing) {
             res.json({ url: `https://snip.ml/${existing.id}`, id: existing.id });
           } else {
-            await Snip.create({ url, id });
+            await Snip.create({ url: normalizedURL, id });
             res.json({ url: `https://snip.ml/${id}`, id });
           }
         } catch (err) {
