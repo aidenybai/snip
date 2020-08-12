@@ -24,10 +24,6 @@ class Root extends Route {
       }
     });
 
-    router.use('*', (_req, res) => {
-      res.boom.notFound();
-    });
-
     return router;
   }
 }
