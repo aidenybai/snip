@@ -9,8 +9,6 @@ import Validate from '../../utils/Validate';
 class API extends Route {
   path: string;
 
-  router: Router;
-
   hash: Hash;
 
   captcha: ReCaptcha;
@@ -19,15 +17,16 @@ class API extends Route {
 
   constructor() {
     super('/v1');
-    this.router = Router();
     this.hash = new Hash();
     this.captcha = new ReCaptcha();
     this.validate = new Validate();
   }
 
   run(): Router {
+    const router = Router();
+
     // eslint-disable-next-line consistent-return
-    this.router.post('/url', async (req, res): Promise<unknown> => {
+    router.post('/url', async (req, res): Promise<unknown> => {
       const captchaResponse = await this.captcha.data(req.body.token);
       if (!captchaResponse.success) return res.boom.forbidden('Token failure (refresh page)');
       if (captchaResponse.score < 0.5) {
@@ -61,7 +60,7 @@ class API extends Route {
       }
     });
 
-    this.router.get('/url', async (req, res) => {
+    router.get('/url', async (req, res) => {
       const url = await Snip.findOne({ id: req.query.id });
 
       if (url) {
@@ -71,11 +70,11 @@ class API extends Route {
       }
     });
 
-    this.router.get('/ping', async (req, res) => {
+    router.get('/ping', async (req, res) => {
       res.send('OK');
     });
 
-    return this.router;
+    return router;
   }
 }
 

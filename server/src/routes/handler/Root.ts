@@ -5,15 +5,15 @@ import Snip from '../../models/Snip';
 class Root extends Route {
   path: string;
 
-  router: Router;
-
   constructor() {
     super('/');
-    this.router = Router();
   }
 
+  // eslint-disable-next-line class-methods-use-this
   run(): Router {
-    this.router.get('/*', async (req, res) => {
+    const router = Router();
+
+    router.get('/*', async (req, res) => {
       if (!req.url.slice(1)) res.boom.notFound();
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const url: any = await Snip.findOne({ id: req.url.slice(1) });
@@ -24,11 +24,11 @@ class Root extends Route {
       }
     });
 
-    this.router.use('*', (req, res) => {
+    router.use('*', (_req, res) => {
       res.boom.notFound();
     });
 
-    return this.router;
+    return router;
   }
 }
 
