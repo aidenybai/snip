@@ -1,7 +1,8 @@
 {
   "name": "snip",
-  "version": "0.1.0",
   "private": true,
+  "version": "1.0.0",
+  "description": "The simple, no-bs link shortener.",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build && cp redirects.txt dist/_redirects",

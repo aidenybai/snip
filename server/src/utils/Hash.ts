@@ -2,9 +2,10 @@ import ShortUniqueId from 'short-unique-id';
 
 class Hash {
   uid: ShortUniqueId;
+
   sequential: boolean;
 
-  constructor(opts: any = {}) {
+  constructor(opts: Record<string, boolean> = {}) {
     this.uid = new ShortUniqueId();
     this.sequential = opts.sequential || false;
   }

@@ -1,3 +1,4 @@
+import { Express } from 'express';
 import bodyParser from 'body-parser';
 import boom from 'express-boom';
 import cors from 'cors';
@@ -17,8 +18,8 @@ const coreMiddlewares = [
 ];
 
 class Middleware {
-  static registerCoreMiddlewares(app) {
-    app.enable('trust proxy', true);
+  static registerCoreMiddlewares(app: Express): void {
+    app.enable('trust proxy');
     app.disable('view cache');
 
     app.use(
@@ -26,7 +27,7 @@ class Middleware {
       ratelimit({
         windowMs: 10000,
         max: 50,
-      })
+      }),
     );
 
     coreMiddlewares.forEach((middleware) => {

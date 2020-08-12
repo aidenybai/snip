@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import Route from './Route';
 import normalizeURL from 'normalize-url';
+import Route from './Route';
 import Snip from '../../models/Snip';
 import Hash from '../../utils/Hash';
 import ReCaptcha from '../../utils/ReCaptcha';
@@ -8,26 +8,31 @@ import Validate from '../../utils/Validate';
 
 class API extends Route {
   path: string;
+
+  router: Router;
+
   hash: Hash;
+
   captcha: ReCaptcha;
+
   validate: Validate;
 
   constructor() {
     super('/v1');
+    this.router = Router();
     this.hash = new Hash();
     this.captcha = new ReCaptcha();
     this.validate = new Validate();
   }
 
   run(): Router {
-    const router = Router();
-
-    router.post('/url', async (req, res) => {
+    // eslint-disable-next-line consistent-return
+    this.router.post('/url', async (req, res): Promise<unknown> => {
       const captchaResponse = await this.captcha.data(req.body.token);
-      if (!captchaResponse.success) return res.boom.forbidden(`Token failure (refresh page)`);
+      if (!captchaResponse.success) return res.boom.forbidden('Token failure (refresh page)');
       if (captchaResponse.score < 0.5) {
         return res.boom.forbidden(
-          `Your bot score (${captchaResponse.score || null}) is less than 0.5`
+          `Your bot score (${captchaResponse.score || null}) is less than 0.5`,
         );
       }
 
@@ -38,8 +43,8 @@ class API extends Route {
         res.boom.badRequest('ID already taken');
       } else {
         try {
-          const url = normalizeURL(req.body.url);
-          const validate = await this.validate.url(url);
+          const normalizedURL = normalizeURL(req.body.url);
+          const validate = await this.validate.url(normalizedURL);
 
           if (validate.error) return res.boom.badRequest(validate.message);
           const existing = await Snip.findOne({ url });
@@ -56,7 +61,7 @@ class API extends Route {
       }
     });
 
-    router.get('/url', async (req, res) => {
+    this.router.get('/url', async (req, res) => {
       const url = await Snip.findOne({ id: req.query.id });
 
       if (url) {
@@ -66,11 +71,11 @@ class API extends Route {
       }
     });
 
-    router.get('/ping', async (req, res) => {
+    this.router.get('/ping', async (req, res) => {
       res.send('OK');
     });
 
-    return router;
+    return this.router;
   }
 }
 

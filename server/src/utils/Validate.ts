@@ -1,20 +1,24 @@
-import Fetch from './Fetch';
 import URL from 'url';
+import Fetch from './Fetch';
 
 class Validate {
   fetch: Fetch;
+
   max: number;
+
   min: number;
+
   baseURL: string;
 
-  constructor(opts: any = {}) {
+  constructor(opts: Record<string, number> = {}) {
     this.fetch = new Fetch();
+    this.baseURL = 'snip.ml';
     this.max = opts.max || 10000;
     this.min = opts.min || 3;
-    this.baseURL = opts.baseURL || 'snip.ml';
   }
 
-  async url(url: string): Promise<any> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  async url(url: string): Promise<Record<string, any>> {
     if (!url) return { error: true, message: 'You must provide a url body parameter' };
     if (url.length > this.max) {
       return { error: true, message: 'URL length must be less than 10000' };
@@ -27,7 +31,7 @@ class Validate {
     }
 
     try {
-      await this.fetch.get({ url });
+      await this.fetch.get(url);
 
       return { error: false };
     } catch (err) {

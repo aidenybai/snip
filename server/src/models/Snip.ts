@@ -1,8 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import ms from 'ms';
 
 class Snip {
   ttl: number;
+
   expire: string;
 
   constructor() {
@@ -10,7 +11,7 @@ class Snip {
     this.expire = new Date(this.ttl).toISOString();
   }
 
-  schema(): any {
+  schema(): Schema<unknown> {
     const SnipSchema = new mongoose.Schema(
       {
         id: { type: String, required: true },
@@ -20,7 +21,7 @@ class Snip {
           default: this.expire,
         },
       },
-      { timestamps: true }
+      { timestamps: true },
     );
 
     return SnipSchema;

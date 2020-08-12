@@ -5,7 +5,7 @@ import API from './handler/API';
 const routes = [new API(), new Root()];
 
 export default class {
-  static registerRoutes(app: Express) {
+  static registerRoutes(app: Express): void {
     routes.forEach((route) => {
       app.use(route.path, route.run());
     });

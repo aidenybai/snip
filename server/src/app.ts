@@ -17,6 +17,7 @@ middleware.registerCoreMiddlewares(app);
 router.registerRoutes(app);
 
 app.listen(config.PORT, (err) => {
-  if (err) return console.error(err);
-  return console.log(`Launched app on port ${config.PORT}`);
+  if (err) throw new Error(err);
+  // eslint-disable-next-line no-console
+  return console.log(`Running on ${config.PORT}`);
 });

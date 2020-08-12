@@ -3,6 +3,7 @@ import config from '../config/production';
 
 class Captcha {
   fetch: Fetch;
+
   secret: string;
 
   constructor() {
@@ -10,10 +11,11 @@ class Captcha {
     this.secret = config.SECRET;
   }
 
-  async data(token): Promise<any> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  async data(token: string): Promise<any> {
     try {
-      const url: string = `https://www.google.com/recaptcha/api/siteverify?secret=${this.secret}&response=${token}`;
-      const body = await this.fetch.post({ url });
+      const url = `https://www.google.com/recaptcha/api/siteverify?secret=${this.secret}&response=${token}`;
+      const body = await this.fetch.post(url);
 
       return body;
     } catch (err) {

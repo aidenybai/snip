@@ -1,26 +1,28 @@
 import fetch from 'isomorphic-fetch';
 
 class Fetch {
-  async get(opts: any): Promise<any> {
-    const response: Response = await fetch(opts.url, {
+  url: string;
+
+  async get(url: string): Promise<unknown> {
+    this.url = url;
+    const response: Response = await fetch(this.url, {
       method: 'get',
     });
 
-    const type = opts.type.toLowerCase() === 'json';
-    const body: Promise<any> = type ? response.json() : response.text();
+    const body = await response.json();
 
-    return await body;
+    return body;
   }
 
-  async post(opts: any): Promise<any> {
-    const response: Response = await fetch(opts.url, {
+  async post(url: string): Promise<unknown> {
+    this.url = url;
+    const response: Response = await fetch(this.url, {
       method: 'post',
     });
 
-    const type = opts.type.toLowerCase() || 'json';
-    const body: Promise<any> = type === 'json' ? response.json() : response.text();
+    const body = await response.json();
 
-    return await body;
+    return body;
   }
 }
 
