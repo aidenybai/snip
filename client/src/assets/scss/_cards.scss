@@ -15,6 +15,11 @@
   font-size: 300% !important;
 }
 
+.fa-hand-scissors:hover {
+  animation: tada; 
+  animation-duration: 1s;
+}
+
 .card-subtitle {
   font-size: 120% !important;
 }
