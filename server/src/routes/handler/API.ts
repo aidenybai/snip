@@ -3,7 +3,7 @@ import normalizeURL from 'normalize-url';
 import Route from './Route';
 import Snip from '../../models/Snip';
 import Hash from '../../utils/Hash';
-import ReCaptcha from '../../utils/ReCaptcha';
+import Captcha from '../../utils/Captcha';
 import Validate from '../../utils/Validate';
 
 class API extends Route {
@@ -11,14 +11,14 @@ class API extends Route {
 
   hash: Hash;
 
-  captcha: ReCaptcha;
+  captcha: Captcha;
 
   validate: Validate;
 
   constructor() {
     super('/v1');
     this.hash = new Hash();
-    this.captcha = new ReCaptcha();
+    this.captcha = new Captcha();
     this.validate = new Validate();
   }
 
