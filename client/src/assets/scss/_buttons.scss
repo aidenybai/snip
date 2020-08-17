@@ -4,55 +4,55 @@
 
 .btn:focus {
   box-shadow: none !important;
-  border-color: #7461fb !important;
+  border-color: #8672E8 !important;
 }
 
 .btn-primary {
   font-size: 110% !important;
-  background: #7461fb !important;
-  border-color: #7461fb !important;
+  background: #8672E8 !important;
+  border-color: #8672E8 !important;
   padding: 9px !important;
   border-radius: 10px !important;
 
   &:hover {
-    background: rgba(102, 82, 255, 0.95) !important;
-    border-color: rgba(102, 82, 255, 0.95) !important;
+    background: #8672e8e7 !important;
+    border-color: #8672e8e7 !important;
   }
 
   &:active {
-    background: rgba(102, 82, 255, 0.95) !important;
-    border-color: rgba(102, 82, 255, 0.95) !important;
+    background: #8672e8e7 !important;
+    border-color: #8672e8e7 !important;
   }
 
   &:focus {
-    background: rgba(102, 82, 255, 0.95) !important;
-    border-color: rgba(102, 82, 255, 0.95) !important;
+    background: #8672e8e7 !important;
+    border-color: #8672e8e7 !important;
   }
 }
 
 .btn-outline-primary {
   font-size: 110% !important;
-  color: #7461fb !important;
-  border-color: #7461fb !important;
+  color: #8672E8 !important;
+  border-color: #8672E8 !important;
   padding: 9px !important;
   font-weight: bold !important;
   border-radius: 10px !important;
 
   &:hover {
-    color: rgba(102, 82, 255, 0.95) !important;
-    border-color: rgba(102, 82, 255, 0.95) !important;
-    background: rgba(102, 82, 255, 0.1) !important;
+    color: #8672e8e7 !important;
+    border-color: #8672e8e7 !important;
+    background: #8672e817 !important;
   }
 
   &:active {
-    color: rgba(102, 82, 255, 0.95) !important;
-    border-color: rgba(102, 82, 255, 0.95) !important;
-    background: rgba(102, 82, 255, 0.2) !important;
+    color: #8672e8e7 !important;
+    border-color: #8672e8e7 !important;
+    background: #8672e85e !important;
   }
 
   &:focus {
-    color: rgba(102, 82, 255, 0.95) !important;
-    border-color: rgba(102, 82, 255, 0.95) !important;
-    background: rgba(102, 82, 255, 0.2) !important;
+    color: #8672e8e7 !important;
+    border-color: #8672e8e7 !important;
+    background: #8672e85e !important;
   }
 }
