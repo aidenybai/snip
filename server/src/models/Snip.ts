@@ -7,7 +7,7 @@ class Snip {
   expire: string;
 
   constructor() {
-    this.ttl = Date.now() + ms('90 days');
+    this.ttl = Date.now() + ms('7 days');
     this.expire = new Date(this.ttl).toISOString();
   }
 

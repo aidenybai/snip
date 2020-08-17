@@ -13,7 +13,7 @@ class Validate {
   constructor(opts: Record<string, number> = {}) {
     this.fetch = new Fetch();
     this.baseURL = 'snip.ml';
-    this.max = opts.max || 10000;
+    this.max = opts.max || 100000;
     this.min = opts.min || 3;
   }
 
@@ -21,7 +21,7 @@ class Validate {
   async url(url: string): Promise<Record<string, any>> {
     if (!url) return { error: true, message: 'You must provide a url body parameter' };
     if (url.length > this.max) {
-      return { error: true, message: 'URL length must be less than 10000' };
+      return { error: true, message: 'URL length must be less than 100000' };
     }
     if (url.length < this.min) {
       return { error: true, message: 'URL length must be greater than 3' };
