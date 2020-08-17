@@ -5,7 +5,8 @@
 # Snip
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/394af265-a105-4fe8-afb9-ef0a68718780/deploy-status)](https://app.netlify.com/sites/snip-client/deploys)
-[![Dependencies](https://img.shields.io/david/aidenybai/snip.svg?style=flat-square)](https://img.shields.io/david/aidenybai/snip.svg?style=flat-square)
+[![API Uptime](https://badgen.net/uptime-robot/day/m785666575-5273ca5aefce65d777404720?style=flat-square)](https://badgen.net/uptime-robot/day/m785666575-5273ca5aefce65d777404720?style=flat-square)
+[![API Ping](https://badgen.net/uptime-robot/response/m780862024-50db2c44c703e5c68d6b1ebb?style=flat-square)](https://badgen.net/uptime-robot/response/m780862024-50db2c44c703e5c68d6b1ebb?style=flat-square)
 [![Code Size](https://img.shields.io/github/languages/code-size/aidenybai/snip?style=flat-square)](https://img.shields.io/github/languages/code-size/aidenybai/snip?style=flat-square)
 [![License](https://img.shields.io/github/license/aidenybai/snip?style=flat-square)](https://img.shields.io/github/license/aidenybai/snip?style=flat-square)
 
