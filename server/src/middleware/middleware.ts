@@ -26,7 +26,7 @@ class Middleware {
       '/api/v1',
       ratelimit({
         windowMs: 10000,
-        max: 50,
+        max: 20,
       }),
     );
 
