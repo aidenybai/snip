@@ -4,6 +4,11 @@ h3 {
 
 a {
   color: #9facb8 !important;
+  transition: all 100ms;
+}
+
+a:hover {
+  color: #8672E8 !important;
 }
 
 .fa-hand-peace {
