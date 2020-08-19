@@ -6,7 +6,7 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "node dist/app.js",
-    "start:dev": "nodemon",
+    "serve": "nodemon",
     "build": "tsc"
   },
   "author": "Aiden Bai",

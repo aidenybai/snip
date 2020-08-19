@@ -10,9 +10,11 @@
 [![Code Size](https://img.shields.io/github/languages/code-size/aidenybai/snip?style=flat-square)](https://img.shields.io/github/languages/code-size/aidenybai/snip?style=flat-square)
 [![License](https://img.shields.io/github/license/aidenybai/snip?style=flat-square)](https://img.shields.io/github/license/aidenybai/snip?style=flat-square)
 
-> The simple, no-bs link shortener.
+A faster, cleaner, no-bs link shortener, skipping the not-so-great privacy reputation of marketing centric link shorteners (cough adfly). 
 
 ## Goals
+
+We adapt [Chromium principles](https://www.chromium.org/developers/core-principles) to help us drive product decisions:
 
 - **Speed**: Snip has low performance overhead and is compressed with deflate and gzip.
 - **Security**: Snip is secured with 128-bit SSL and no user data is stored (privacy baby)
@@ -30,33 +32,49 @@ cd snip
 
 Note: You will need at least NodeJS 10.18.1+, VSCode 1.44+, Yarn 1.17.3+ and MongoDB 3+. You will also need to configure .env variables before launching.
 
-### Configuring Environment Variables
+## FAQ
+
+#### Q: Who maintains Snip?
+
+Aiden Bai maintains the project, but we'd love your help and expertise on the project! Feel free to fork and make changes, if you like the project, drop a ⭐!
+
+#### Q: What is the character limit for links?
+
+100,000 characters after normalization by [normalize-url](https://github.com/sindresorhus/normalize-url). If your link isn't initially provided correctly, the normalization algorithm may increase your link character count.
+
+#### Q: What is the character limit for links?
+
+100,000 characters after normalization by [normalize-url](https://github.com/sindresorhus/normalize-url). If your link isn't initially provided correctly, the normalization algorithm may increase your link character count.
+
+#### Q: I'm recieving `ReferenceError: yarn is not defined` whenever I try to use Yarn
+
+You need to install yarn first. Go to [their website](https://yarnpkg.com/lang/en/docs/install/) and follow instructions.
+
+#### Q: What's the difference between `yarn start` and `yarn serve`?
+
+Our project has two environments: Production and Development. The production environment is used when it is actually hosted, an example is https://snip.ml. The development environment shows more "developer" metrics, helping you to debug, but is not suitible for production.
 
 ```bash
-# Environment Config
-# Store your secrets and config variables in here
-# reference these in code with process.env.ENV_VARIABLE
+yarn start # production
 
-PORT=3000
-MONGO_URL=mongodb://mongodb.example.com:27017
-SECRET=google_recaptcha_client_secret_key
-
-# Note: MongoDB URI must be in the mongodb:// protocol, the mongodb+srv:// protocol is not supported
+yarn serve # development
 ```
 
-Create a file named `.env` to be able to interact with `process.env` in NodeJS.
+#### Q: I'm recieving `Error: Cannot find module 'example'` whenever I start the project
 
-### Usage
-
-Snip follows the latest maintenance LTS version of Node.
+You need to install the packages with the command below.
 
 ```bash
 yarn
-yarn start:dev
-# build: yarn build
-# production: yarn start
 ```
 
-Visit [localhost:3000](http://localhost:3000) to view the application.
+
+## Useful Links
+
+- [The website](https://snip.ml) hosts the production version of the website.
+- [Our Github Repository](https://github.com/aidenybai/snip) contains the most updated code.
+- [Our Producthunt Page](https://www.producthunt.com/posts/snip-ml) shows the latest feedback from indie makers.
+
+Made with 💖 by Aiden Bai
 
 ＼＿ﾍ(◕‿◕ ✰)
