@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h3 class="card-title">
-      <font-awesome-icon :icon="['fas', 'hand-peace']" /> {{ title }}
+    <h3 class="card-title mb-3">
+      <img src="/img/icons/title-logo.svg" width="200px">
     </h3>
     <h6 class="card-subtitle mb-3 text-muted">{{ subtitle }}</h6>
   </div>

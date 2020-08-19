@@ -22,8 +22,7 @@
       <button v-if="seen" @click="copy" type="button" class="btn btn-outline-primary mr-2 shadow">
         <font-awesome-icon :icon="['fas', 'copy']" /> Copy
       </button>
-      ></transition
-    >
+    </transition>
 
     <PageTips />
   </form>
