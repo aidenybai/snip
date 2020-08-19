@@ -42,9 +42,9 @@ Aiden Bai maintains the project, but we'd love your help and expertise on the pr
 
 100,000 characters after normalization by [normalize-url](https://github.com/sindresorhus/normalize-url). If your link isn't initially provided correctly, the normalization algorithm may increase your link character count.
 
-#### Q: What is the character limit for links?
+#### Q: Is there a expiry or TTL for snips?
 
-100,000 characters after normalization by [normalize-url](https://github.com/sindresorhus/normalize-url). If your link isn't initially provided correctly, the normalization algorithm may increase your link character count.
+Yes, the TTL for snips is 7 days before permanent deletion.
 
 #### Q: I'm recieving `ReferenceError: yarn is not defined` whenever I try to use Yarn
 
