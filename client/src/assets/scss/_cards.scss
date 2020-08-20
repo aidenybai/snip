@@ -12,10 +12,13 @@
 }
 
 .card-title {
+  opacity: 0.95;
   font-size: 300% !important;
+  transition: 200ms all;
 }
 
 .card-title:hover {
+  opacity: 1;
   animation: tada;
   animation-duration: 1s;
 }
