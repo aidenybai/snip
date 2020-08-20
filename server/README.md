@@ -22,8 +22,6 @@ Note: You will need at least NodeJS 10.18.1+, VSCode 1.44+, Yarn 1.17.3+ and Mon
 PORT=3000
 DB_URL=mongodb://mongodb.example.com:27017
 SECRET=google-recaptcha3-token
-
-# Note: MongoDB URI must be in the mongodb:// protocol, the mongodb+srv:// is not supported
 ```
 
 Copy and rename `.env.example` to `.env` to be able to interact with `process.env` in NodeJS.
