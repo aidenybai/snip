@@ -10,8 +10,8 @@ class Hash {
     this.sequential = opts.sequential || false;
   }
 
-  generate(): string {
-    return this.sequential ? this.uid.seq() : this.uid();
+  generate(length?: number): string {
+    return this.sequential ? this.uid.seq() : this.uid(length || 4);
   }
 }
 
