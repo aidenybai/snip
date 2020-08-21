@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Snip from '@/plugins/Snip';
+import Snip from '@/plugins/snip';
 
 import 'popper.js';
 import 'bootstrap';
