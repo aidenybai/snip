@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import snip from '@/plugins/snip';
+import Snip from '@/plugins/Snip';
 
 import 'popper.js';
 import 'bootstrap';
@@ -30,7 +30,7 @@ import App from './App.vue';
 library.add(faLink, faHandPeace, faCopy, faInfoCircle);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
-Vue.use(snip);
+Vue.use(Snip);
 Vue.use(Clipboard);
 Vue.use(Toast, {
   maxToasts: 3,
