@@ -8,7 +8,7 @@
         type="text"
         id="url"
         class="form-control"
-        maxlength="50000"
+        maxlength="100000"
         minlength="3"
         placeholder="Enter link"
         required
