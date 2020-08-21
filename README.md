@@ -2,7 +2,7 @@
   <img src="https://snip.ml/img/icons/logo.png" width="80px" align="right" />
 </a>
 
-# Snip
+# Snip [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=No-bs%20link%20shortener&url=https://snip.ml&via=bigbrainaiden&hashtags=snip,link,shortener,nobs,oss)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/394af265-a105-4fe8-afb9-ef0a68718780/deploy-status)](https://app.netlify.com/sites/snip-client/deploys)
 [![API Uptime](https://badgen.net/uptime-robot/day/m785666575-5273ca5aefce65d777404720?style=flat-square&color=7C68F3&labelColor=1D1E32)](https://badgen.net/uptime-robot/day/m785666575-5273ca5aefce65d777404720?style=flat-square&color=7C68F3&labelColor=1D1E32)
