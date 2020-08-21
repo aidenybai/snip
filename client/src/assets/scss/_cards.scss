@@ -9,20 +9,20 @@
   @media only screen and (max-width: 400px) {
     width: 100% !important;
   }
-}
-
-.card-title {
-  opacity: 0.95;
-  font-size: 300% !important;
-  transition: 200ms all;
-}
-
-.card-title:hover {
-  opacity: 1;
-  animation: tada;
-  animation-duration: 1s;
-}
-
-.card-subtitle {
-  font-size: 120% !important;
+  
+  &-title {
+    opacity: 0.95;
+    font-size: 300% !important;
+    transition: 200ms all;
+    
+    &:hover {
+      opacity: 1;
+      animation: tada;
+      animation-duration: 1s;
+    }
+  }
+  
+  &-subtitle {
+    font-size: 120% !important;
+  }
 }
