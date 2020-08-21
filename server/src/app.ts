@@ -13,7 +13,7 @@ mongoose.connect(config.MONGO_URL, {
 
 const app = express();
 
-middleware.registerCoreMiddlewares(app);
+middleware.registerMiddleware(app);
 router.registerRoutes(app);
 
 app.listen(config.PORT, (err) => {

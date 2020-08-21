@@ -18,7 +18,7 @@ const coreMiddlewares = [
 ];
 
 class Middleware {
-  static registerCoreMiddlewares(app: Express): void {
+  static registerMiddleware(app: Express): void {
     app.enable('trust proxy');
     app.disable('view cache');
 
