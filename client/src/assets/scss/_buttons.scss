@@ -1,59 +1,58 @@
 .btn {
   width: 100% !important;
-}
-
-.btn:focus {
-  box-shadow: none !important;
-  border-color: #8672E8 !important;
-}
-
-.btn-primary {
-  font-size: 110% !important;
-  background: #8672E8 !important;
-  border-color: #8672E8 !important;
-  padding: 9px !important;
-  border-radius: 8px !important;
-
-  &:hover {
-    background: #8672e8e7 !important;
-    border-color: #8672e8e7 !important;
-  }
-
-  &:active {
-    background: #8672e8e7 !important;
-    border-color: #8672e8e7 !important;
-  }
-
   &:focus {
-    background: #8672e8e7 !important;
-    border-color: #8672e8e7 !important;
+    box-shadow: none !important;
+    border-color: #8672E8 !important;
   }
-}
+  
+  &-primary {
+    font-size: 110% !important;
+    background: #8672E8 !important;
+    border-color: #8672E8 !important;
+    padding: 9px !important;
+    border-radius: 8px !important;
 
-.btn-outline-primary {
-  font-size: 110% !important;
-  color: #8672E8 !important;
-  border-color: #8672e817 !important;
-  background: #8672e817 !important;
-  padding: 9px !important;
-  font-weight: bold !important;
-  border-radius: 8px !important;
+    &:hover {
+      background: #8672e8e7 !important;
+      border-color: #8672e8e7 !important;
+    }
 
-  &:hover {
-    color: #8f7bf0 !important;
-    border-color: #8672e82c !important;
-    background: #8672e82c !important;
+    &:active {
+      background: #8672e8e7 !important;
+      border-color: #8672e8e7 !important;
+    }
+
+    &:focus {
+      background: #8672e8e7 !important;
+      border-color: #8672e8e7 !important;
+    }
   }
-
-  &:active {
-    color: #9684f1 !important;
-    border-color: #8672e83d !important;
-    background: #8672e83d !important;
-  }
-
-  &:focus {
+  
+  &-outline-primary {
+    font-size: 110% !important;
     color: #8672E8 !important;
     border-color: #8672e817 !important;
-    background: #8672e817;
+    background: #8672e817 !important;
+    padding: 9px !important;
+    font-weight: bold !important;
+    border-radius: 8px !important;
+
+    &:hover {
+      color: #8f7bf0 !important;
+      border-color: #8672e82c !important;
+      background: #8672e82c !important;
+    }
+
+    &:active {
+      color: #9684f1 !important;
+      border-color: #8672e83d !important;
+      background: #8672e83d !important;
+    }
+
+    &:focus {
+      color: #8672E8 !important;
+      border-color: #8672e817 !important;
+      background: #8672e817;
+    }
   }
 }
