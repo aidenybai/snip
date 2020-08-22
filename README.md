@@ -30,6 +30,9 @@ git clone https://github.com/aidenybai/snip.git
 cd snip
 ```
 
+To view client/server installation instructions, open the respective directories. 
+> [client](/tree/master/client#snip-website) | [server](/tree/master/server#snip-website)
+
 Note: You will need at least NodeJS 10.18.1+, VSCode 1.44+, Yarn 1.17.3+ and MongoDB 3+. You will also need to configure .env variables before launching.
 
 ## FAQ
