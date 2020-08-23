@@ -7,6 +7,7 @@ const routes = [new API(), new Root()];
 export default class {
   static registerRoutes(app: Express): void {
     routes.forEach((route) => {
+      // Iterate and register each route
       app.use(route.path, route.run());
     });
   }

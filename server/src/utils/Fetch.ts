@@ -7,6 +7,7 @@ class Fetch {
       method: 'get',
     });
 
+    // Get needs text/plain for content validation
     const body = await response.text();
 
     return body;
@@ -18,6 +19,7 @@ class Fetch {
       method: 'post',
     });
 
+    // Post needs application/json for captcha
     const body = await response.json();
 
     return body;

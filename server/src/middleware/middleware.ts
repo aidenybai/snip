@@ -24,8 +24,9 @@ class Middleware {
 
     app.use(
       '/api/v1',
+      // 20 requests per 10 seconds
       ratelimit({
-        windowMs: 10000,
+        windowMs: 10 * 1000,
         max: 20,
       }),
     );

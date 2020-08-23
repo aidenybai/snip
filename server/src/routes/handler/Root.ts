@@ -17,7 +17,10 @@ class Root extends Route {
     router.get('/*', async (req, res) => {
       if (!req.url.slice(1)) return res.boom.notFound();
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const url: any = await Snip.findOne({ id: req.url.slice(1) });
+      const url: any = await Snip.findOne({
+        id: req.url.slice(1), // gets FOO from snip.ml/FOO
+      });
+
       if (url) {
         res.redirect(301, url.url);
       } else {

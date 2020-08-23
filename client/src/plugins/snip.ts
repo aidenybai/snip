@@ -16,7 +16,7 @@ const manager = new Vue({
         const res = await fetch(this.baseURL, {
           headers: this.headers,
           method: 'post',
-          body: JSON.stringify({
+          body: JSON.stringify({ // Pass ReCAPTCHA V3 token and url for creation
             url,
             token,
           }),

@@ -13,6 +13,7 @@ mongoose.connect(config.MONGO_URL, {
 
 const app = express();
 
+// No initialize because static methods are referenced
 middleware.registerMiddleware(app);
 router.registerRoutes(app);
 

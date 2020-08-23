@@ -7,11 +7,14 @@ class Snip {
   expire: string;
 
   constructor(ttl?) {
+    // Calculate Date object TTL from now
     this.ttl = Date.now() + ms(ttl || '7 days');
+    // Convert Date object to timestamp
     this.expire = new Date(this.ttl).toISOString();
   }
 
   schema(): Schema<unknown> {
+    // id, url, expireAt, timestamp data
     const SnipSchema = new mongoose.Schema(
       {
         id: { type: String, required: true },

@@ -19,15 +19,23 @@ class Validate {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async url(url: string): Promise<Record<string, any>> {
+    /*
+     * Validation covered:
+     * URL exists?
+     * URL length is <= max character length
+     * URL length is >= min character length
+     * URL doesn't include base URL
+     * GET request to URL if content exists
+     */
     if (!url) return { error: true, message: 'You must provide a url body parameter' };
     if (url.length > this.max) {
-      return { error: true, message: 'URL length must be less than 100000' };
+      return { error: true, message: `URL length must be less than ${this.max}` };
     }
     if (url.length < this.min) {
-      return { error: true, message: 'URL length must be greater than 3' };
+      return { error: true, message: `URL length must be greater than ${this.min}` };
     }
-    if (URL.parse(url).host.includes('snip.ml')) {
-      return { error: true, message: 'Base url cannot be snip.ml' };
+    if (URL.parse(url).host.includes(this.baseURL)) {
+      return { error: true, message: `Base url cannot be ${this.baseURL}` };
     }
 
     try {

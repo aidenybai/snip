@@ -41,21 +41,25 @@ export default Vue.extend({
     return {
       seen: false,
       processed: true,
-      url: '',
+      url: '', // Controller for main input
     };
   },
   methods: {
     async shorten() {
+      // Have a processed instance variable to prevent multiclicks and spam
       if (!this.processed) return;
       this.processed = false;
       await this.$recaptchaLoaded();
       const token = await this.$recaptcha('submit');
       const data = await this.$snip.create(this.url, token);
       this.processed = true;
+
       if (data.error) {
+        // Throw error modal if HTTP error on creation
         this.seen = false;
         this.$toast.error(data.message, { timeout: 5000 });
       } else {
+        // Create success modal on completion
         this.seen = true;
         this.url = data.url;
         this.$toast.success('Link Shortened!', { timeout: 2000 });

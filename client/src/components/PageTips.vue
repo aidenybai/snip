@@ -22,7 +22,7 @@ export default Vue.extend({
   name: 'PageTips',
   data() {
     return {
-      tip: tips[Math.floor(Math.random() * tips.length)],
+      tip: tips[Math.floor(Math.random() * tips.length)], // Get random tip (thanks stackoverflow)
     };
   },
 });
