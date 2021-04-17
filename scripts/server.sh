@@ -6,6 +6,3 @@ rm -r client
 rm -r dist
 rm LICENSE
 rm README.md
-npm i
-npm run build
-npm start

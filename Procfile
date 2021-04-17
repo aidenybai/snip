@@ -1,0 +1,1 @@
+web: sh scripts/server.sh && npm i && npm run build && npm start
