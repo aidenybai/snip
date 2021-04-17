@@ -1,1 +1,12 @@
-{}
+{
+  "name": "snip",
+  "private": true,
+  "version": "1.0.0",
+  "description": "The simple, no-bs link shortener.",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "sh scripts/server.sh"
+  },
+  "author": "Aiden Bai",
+  "license": "MIT"
+}
