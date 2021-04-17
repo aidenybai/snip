@@ -1,3 +1,4 @@
+rm package.json
 rm -r src
 cp -a ./server/. ./
 rm -r server
