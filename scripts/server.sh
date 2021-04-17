@@ -7,5 +7,5 @@ rm -r dist
 rm LICENSE
 rm README.md
 npm i
-npm build
+npm run build
 npm start
